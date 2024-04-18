@@ -5,12 +5,10 @@ on:
       - main
   merge_group:
     type: [checks_requested]
-  
 jobs:
   buildForAndroidPlatforms:
     name: Build for Android
-    runs-on: ubuntu-latest
-    
+    runs-on: ubuntu-latest 
     steps:
       - uses: actions/checkout@v4
         with:
