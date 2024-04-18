@@ -5,23 +5,21 @@ on:
       - main
   merge_group:
     type: [checks_requested]
-  
 jobs:
   buildForAndroidPlatforms:
     name: Build for Android
-    runs-on: ubuntu-latest
-    
+    runs-on: self-hosted
     steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-          lfs: true
-      - uses: actions/cache@v3
-        with:
-          path: Library
-          key: Library-Android
-          restore-keys: Library-
-      - uses: jlumbroso/free-disk-space@v1.3.1
+      # - uses: actions/checkout@v4
+      #   with:
+      #     fetch-depth: 0
+      #     lfs: true
+      # - uses: actions/cache@v3
+      #   with:
+      #     path: Library
+      #     key: Library-Android
+      #     restore-keys: Library-
+      # - uses: jlumbroso/free-disk-space@v1.3.1
       - uses: game-ci/unity-builder@v4
         env:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
